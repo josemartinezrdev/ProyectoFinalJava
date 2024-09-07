@@ -28,7 +28,7 @@ public class CrudController {
     }
 
     public void direccionesFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("direcciones");
     }
 
     public void sucursalesFun() throws IOException {

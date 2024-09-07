@@ -5,7 +5,7 @@ USE finalJava;
 
 -- Register and login
 
-CREATE TABLE users ( --' YA
+CREATE TABLE users ( --++ YA
     id INT AUTO_INCREMENT,
     enabled BOOLEAN,
     username VARCHAR(12) ,
@@ -14,7 +14,7 @@ CREATE TABLE users ( --' YA
     CONSTRAINT Uq_user UNIQUE (username)
 );
 
-CREATE TABLE roles ( --' YA
+CREATE TABLE roles ( --++ YA
     id INT AUTO_INCREMENT,
     name VARCHAR(255),
     CONSTRAINT pk_id_roles PRIMARY KEY (id)
@@ -29,21 +29,21 @@ CREATE TABLE users_roles ( --¨¨ NO OLVIDAR CORREGIR UPDATE
 );
 
 -- Tabla empresas
-CREATE TABLE empresas (
+CREATE TABLE empresas ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_empresas PRIMARY KEY (id)
 );
 
 -- Tabla paises
-CREATE TABLE paises (
+CREATE TABLE paises ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_paises PRIMARY KEY (id)
 );
 
 -- Tabla ciudades
-CREATE TABLE ciudades (
+CREATE TABLE ciudades ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     idpais INT,
