@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox prefHeight="508.0" prefWidth="381.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.proyectofinal.users_roles.infrastructure.URController">
+   <children>
+      <VBox alignment="TOP_CENTER" minWidth="0.0" prefHeight="540.0" prefWidth="381.0" spacing="20">
+         <children>
+            <Text text="CRUD UR">
+               <font>
+                  <Font name="Century" size="32.0" />
+               </font>
+            </Text>
+            <VBox fx:id="formContainer" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="381.0" spacing="10">
+               <children>
+                  <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10">
+                     <children>
+                        <Button fx:id="btnCreate" minHeight="0.0" minWidth="0.0" onAction="#eventAction" prefHeight="58.0" prefWidth="140.0" style="-fx-background-color: #2E343E;" text="Crear" textFill="WHITE" />
+                        <Button fx:id="btnUpdate" minHeight="0.0" minWidth="0.0" onAction="#eventAction" prefHeight="58.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Actualizar" textFill="#fffafa" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10" />
+                  <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10">
+                     <children>
+                        <Button fx:id="btnDelete" minHeight="0.0" minWidth="0.0" onAction="#eventAction" prefHeight="54.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Delete" textFill="#fcfcfc" />
+                        <Button fx:id="btnFindAll" minHeight="0.0" minWidth="0.0" onAction="#eventAction" prefHeight="54.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Listar" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10" />
+                  <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="54.0" prefWidth="342.0" spacing="10">
+                     <children>
+                        <Button fx:id="btnFindById" minHeight="0.0" minWidth="0.0" onAction="#eventAction" prefHeight="61.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Buscar" textFill="WHITE" />
+                        <Button fx:id="btnQuit" minHeight="0.0" minWidth="0.0" onAction="#eventAction" prefHeight="63.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Salir" textFill="WHITE" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </VBox>
+            <Pane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
+               <children>
+                  <VBox fx:id="createURVbox" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
+                     <children>
+                        <Label minHeight="0.0" minWidth="0.0" text="ID User: " textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="CUserText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" minWidth="0.0" prefHeight="30.0" prefWidth="57.0" text="ID Rol: " textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="CRolText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="39.0" prefWidth="201.0" promptText="...">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnCreateRepo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#createUR" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: white;" text="Add">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="updateURVbox" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
+                     <children>
+                        <Separator minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                        <HBox minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="190.0">
+                                 <children>
+                                    <Label minHeight="0.0" minWidth="0.0" text="ID USER:" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="UUserIdTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="160.0" promptText="...">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="190.0">
+                                 <children>
+                                    <Label minHeight="0.0" minWidth="0.0" text="ID ROL:" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="URolIdTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="160.0" promptText="...">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Separator minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                        <HBox minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="190.0">
+                                 <children>
+                                    <Label minHeight="0.0" minWidth="0.0" text="NEW ID USER:" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="UNEWUserIdTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="160.0" promptText="...">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="190.0">
+                                 <children>
+                                    <Label minHeight="0.0" minWidth="0.0" text="NEW ID ROL:" textFill="WHITE">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <TextField fx:id="UNEWRolIdTxt" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="160.0" promptText="...">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Separator minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                        <Button fx:id="btnUpdateRepo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#updateUR" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: white;" text="Update">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="40.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox fx:id="findByIdURVbox" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
+                     <children>
+                        <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="332.0" prefWidth="191.0">
+                           <children>
+                              <Label minHeight="0.0" minWidth="0.0" text="ID User:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="FBIDUserText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="146.0" promptText="...">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Label minHeight="0.0" minWidth="0.0" text="ID Rol:" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <TextField fx:id="FBIDRolText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="146.0" promptText="...">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </TextField>
+                              <Button fx:id="btnFindByIdRepo" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#findByIdUR" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: white;" text="Search">
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnBackFindById" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#back" prefHeight="38.0" prefWidth="145.0" style="-fx-background-color: white;" text="Back">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="campUser" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefWidth="150.0" text="NAMETEXT" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="campRol" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefWidth="150.0" text="PASSTEXT" textFill="WHITE">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox fx:id="findAllURVbox" alignment="CENTER" layoutY="1.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="382.0" style="-fx-background-color: #2E343E;">
+                     <children>
+                        <TableView fx:id="URTableView" maxWidth="0.0" minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                          <columns>
+                              <TableColumn fx:id="coliduser" prefWidth="113.99998474121094" text="NAME" />
+                              <TableColumn fx:id="colidrol" prefWidth="115.33334350585938" text="PASSWORD" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="idback" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="75.0" text="Back">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <VBox fx:id="deleteURVbox" alignment="CENTER" layoutY="-3.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
+                     <children>
+                        <Label minHeight="0.0" minWidth="0.0" text="ID User:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="DIDUserText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" minWidth="0.0" text="ID Rol:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="DIDRolText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnDeleteUR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#deleteUR" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: white;" text="Delete">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets top="20.0" />
+   </padding>
+</HBox>
