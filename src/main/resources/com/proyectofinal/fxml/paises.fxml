@@ -166,9 +166,12 @@
                               <TableColumn fx:id="colname" minWidth="0.0" prefWidth="298.66663360595703" text="NAME" />
                           </columns>
                         </TableView>
-                        <Button minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="75.0" text="Back">
+                        <Button alignment="CENTER" contentDisplay="CENTER" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: white;" text="Back">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                              <Insets top="40.0" />
                            </VBox.margin>
                         </Button>
                      </children>

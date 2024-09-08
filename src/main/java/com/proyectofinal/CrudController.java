@@ -32,30 +32,38 @@ public class CrudController {
     }
 
     public void sucursalesFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("sucursales");
     }
 
     public void proveedoresFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("proveedores");
     }
 
     public void categoriasFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("categorias");
     }
 
     public void productosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("productos");
     }
 
     public void estadosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("estados");
     }
 
     public void pedidosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("pedidos");
     }
 
     public void detallesPedidosFun() throws IOException {
+        App.setRoot("detalles_pedidos");
+    }
+
+    public void bodegasFun() throws IOException {
+        App.setRoot("bodegas");
+    }
+
+    public void bodegasProductosFun() throws IOException {
         App.setRoot("users");
     }
 

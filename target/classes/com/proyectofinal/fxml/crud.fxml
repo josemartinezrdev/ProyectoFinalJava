@@ -150,6 +150,26 @@
                   </HBox>
                   <HBox alignment="CENTER" spacing="10">
                      <children>
+                        <Button fx:id="btnPedidos" minHeight="0.0" minWidth="0.0" onAction="#bodegasFun" prefHeight="25.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Bodegas" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="btnBodegasProductos" minHeight="0.0" minWidth="0.0" onAction="#bodegasProductosFun" prefHeight="25.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Bodegas Productos" textFill="#f8f8f8">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" spacing="10">
+                     <children>
                         <Button fx:id="btnEmleados" minHeight="0.0" minWidth="0.0" onAction="#empleadosFun" prefHeight="25.0" prefWidth="140" style="-fx-background-color: #2E343E;" text="Empleados" textFill="WHITE">
                            <HBox.margin>
                               <Insets />

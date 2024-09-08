@@ -28,21 +28,20 @@ CREATE TABLE users_roles ( --¨¨ NO OLVIDAR CORREGIR UPDATE
     CONSTRAINT fk_users_roles_role FOREIGN KEY (role_id) REFERENCES roles (id)
 );
 
--- Tabla empresas
+-- DB
+
 CREATE TABLE empresas ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_empresas PRIMARY KEY (id)
 );
 
--- Tabla paises
 CREATE TABLE paises ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_paises PRIMARY KEY (id)
 );
 
--- Tabla ciudades
 CREATE TABLE ciudades ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
@@ -51,8 +50,7 @@ CREATE TABLE ciudades ( --++ YA
     CONSTRAINT fk_ciudades_paises FOREIGN KEY (idpais) REFERENCES paises(id)
 );
 
--- Tabla direcciones
-CREATE TABLE direcciones (
+CREATE TABLE direcciones ( --++ YA
     id INT AUTO_INCREMENT,
     calle VARCHAR(50),
     carrera VARCHAR(50),
@@ -61,8 +59,7 @@ CREATE TABLE direcciones (
     CONSTRAINT fk_direcciones_ciudades FOREIGN KEY (idciudad) REFERENCES ciudades(id)
 );
 
--- Tabla sucursales
-CREATE TABLE sucursales (
+CREATE TABLE sucursales ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     iddireccion INT,
@@ -72,8 +69,7 @@ CREATE TABLE sucursales (
     CONSTRAINT fk_sucursales_empresas FOREIGN KEY (idempresa) REFERENCES empresas(id)
 );
 
--- Tabla proveedores
-CREATE TABLE proveedores (
+CREATE TABLE proveedores ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     iddireccion INT,
@@ -81,15 +77,13 @@ CREATE TABLE proveedores (
     CONSTRAINT fk_proveedores_direcciones FOREIGN KEY (iddireccion) REFERENCES direcciones(id)
 );
 
--- Tabla categorias
-CREATE TABLE categorias (
+CREATE TABLE categorias ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_categorias PRIMARY KEY (id)
 );
 
--- Tabla productos
-CREATE TABLE productos (
+CREATE TABLE productos ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     precio DECIMAL(10,2),
@@ -98,15 +92,13 @@ CREATE TABLE productos (
     CONSTRAINT fk_productos_categorias FOREIGN KEY (idcategoria) REFERENCES categorias(id)
 );
 
--- Tabla estados
-CREATE TABLE estados (
+CREATE TABLE estados ( --++ YA
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_estados PRIMARY KEY (id)
 );
 
--- Tabla pedidos
-CREATE TABLE pedidos (
+CREATE TABLE pedidos ( --++ YA
     id INT AUTO_INCREMENT,
     total DECIMAL(10,2),
     idestado INT,
@@ -114,8 +106,7 @@ CREATE TABLE pedidos (
     CONSTRAINT fk_pedidos_estados FOREIGN KEY (idestado) REFERENCES estados(id)
 );
 
--- Tabla detalles_pedidos
-CREATE TABLE detalles_pedidos (
+CREATE TABLE detalles_pedidos ( --++ YA
     id INT AUTO_INCREMENT,
     idproducto INT,
     idpedido INT,
@@ -126,7 +117,6 @@ CREATE TABLE detalles_pedidos (
     CONSTRAINT fk_detalles_pedidos_proveedores FOREIGN KEY (idproveedor) REFERENCES proveedores(id)
 );
 
--- Tabla bodegas
 CREATE TABLE bodegas (
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
@@ -135,7 +125,6 @@ CREATE TABLE bodegas (
     CONSTRAINT fk_bodegas_direcciones FOREIGN KEY (iddireccion) REFERENCES direcciones(id)
 );
 
--- Tabla productos_bodegas
 CREATE TABLE productos_bodegas (
     idproducto INT,
     idbodega INT,
@@ -144,7 +133,6 @@ CREATE TABLE productos_bodegas (
     CONSTRAINT fk_productos_bodegas_bodegas FOREIGN KEY (idbodega) REFERENCES bodegas(id)
 );
 
--- Tabla empleados
 CREATE TABLE empleados (
     id VARCHAR(50),
     nombre VARCHAR(50),
@@ -153,7 +141,6 @@ CREATE TABLE empleados (
     CONSTRAINT fk_empleados_sucursales FOREIGN KEY (idsucursal) REFERENCES sucursales(id)
 );
 
--- Tabla telefonos_empleados
 CREATE TABLE telefonos_empleados (
     id INT AUTO_INCREMENT,
     telefono VARCHAR(20),
@@ -162,7 +149,6 @@ CREATE TABLE telefonos_empleados (
     CONSTRAINT fk_telefonos_empleados_empleados FOREIGN KEY (idempleado) REFERENCES empleados(id)
 );
 
--- Tabla proveedores_productos
 CREATE TABLE proveedores_productos (
     idproducto INT,
     idproveedor INT,
@@ -171,7 +157,6 @@ CREATE TABLE proveedores_productos (
     CONSTRAINT fk_proveedores_productos_proveedores FOREIGN KEY (idproveedor) REFERENCES proveedores(id)
 );
 
--- Tabla compras
 CREATE TABLE compras (
     id INT AUTO_INCREMENT,
     fecha DATE,
@@ -181,7 +166,6 @@ CREATE TABLE compras (
     CONSTRAINT fk_compras_empleados FOREIGN KEY (idempleado) REFERENCES empleados(id)
 );
 
--- Tabla detalle_compras
 CREATE TABLE detalle_compras (
     idcompra INT,
     idpedido INT,
@@ -190,14 +174,12 @@ CREATE TABLE detalle_compras (
     CONSTRAINT fk_detalle_compras_pedidos FOREIGN KEY (idpedido) REFERENCES pedidos(id)
 );
 
--- Tabla tipos_clientes
 CREATE TABLE tipos_clientes (
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_tipos_clientes PRIMARY KEY (id)
 );
 
--- Tabla clientes
 CREATE TABLE clientes (
     id VARCHAR(50),
     nombre VARCHAR(50),
@@ -209,7 +191,6 @@ CREATE TABLE clientes (
     CONSTRAINT fk_clientes_direcciones FOREIGN KEY (iddireccion) REFERENCES direcciones(id)
 );
 
--- Tabla telefonos_clientes
 CREATE TABLE telefonos_clientes (
     id INT AUTO_INCREMENT,
     telefono VARCHAR(20),
@@ -218,7 +199,6 @@ CREATE TABLE telefonos_clientes (
     CONSTRAINT fk_telefonos_clientes_clientes FOREIGN KEY (idcliente) REFERENCES clientes(id)
 );
 
--- Tabla ventas
 CREATE TABLE ventas (
     id INT AUTO_INCREMENT,
     fecha DATE,
@@ -230,7 +210,6 @@ CREATE TABLE ventas (
     CONSTRAINT fk_ventas_clientes FOREIGN KEY (idcliente) REFERENCES clientes(id)
 );
 
--- Tabla detalles_ventas
 CREATE TABLE detalles_ventas (
     idventa INT,
     total INT,
