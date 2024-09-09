@@ -64,27 +64,27 @@ public class CrudController {
     }
 
     public void bodegasProductosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("productos_bodegas");
     }
 
     public void empleadosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("empleados");
     }
 
     public void telefonosEmpleadosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("telefonos_empleados");
     }
 
     public void proveedoresProductosFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("proveedores_productos");
     }
 
     public void comprasFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("compras");
     }
 
     public void detallesComprasFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("detalle_compras");
     }
 
     public void tiposClientesFun() throws IOException {

@@ -22,7 +22,7 @@
                   <Font name="Century" size="32.0" />
                </font>
             </Text>
-            <VBox fx:id="formContainer" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="400.0" prefWidth="381.0" spacing="10">
+            <VBox fx:id="formContainer" alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="381.0" spacing="10">
                <children>
                   <HBox alignment="CENTER" minHeight="0.0" minWidth="0.0" spacing="10">
                      <children>
@@ -174,6 +174,41 @@
                         </Button>
                      </children>
                   </VBox>
+                  <VBox fx:id="deleteURVbox" alignment="CENTER" layoutY="-3.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
+                     <children>
+                        <Label minHeight="0.0" minWidth="0.0" text="ID User:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </Label>
+                        <TextField fx:id="DIDUserText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label minHeight="0.0" minWidth="0.0" text="ID Rol:" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="DIDRolText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnDeleteUR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#deleteUR" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: white;" text="Delete">
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
                   <HBox fx:id="findByIdURVbox" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
                      <children>
                         <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="332.0" prefWidth="191.0">
@@ -240,44 +275,12 @@
                               <TableColumn fx:id="colidrol" prefWidth="115.33334350585938" text="PASSWORD" />
                           </columns>
                         </TableView>
-                        <Button fx:id="idback" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0" prefWidth="75.0" text="Back">
+                        <Button fx:id="idback" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#back" prefHeight="39.0" prefWidth="130.0" style="-fx-background-color: white;" text="Back">
                            <VBox.margin>
                               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                            </VBox.margin>
-                        </Button>
-                     </children>
-                  </VBox>
-                  <VBox fx:id="deleteURVbox" alignment="CENTER" layoutY="-3.0" minHeight="0.0" minWidth="0.0" prefHeight="0.0" prefWidth="381.0" style="-fx-background-color: #2E343E;">
-                     <children>
-                        <Label minHeight="0.0" minWidth="0.0" text="ID User:" textFill="WHITE">
                            <font>
                               <Font size="18.0" />
-                           </font>
-                           <VBox.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </VBox.margin>
-                        </Label>
-                        <TextField fx:id="DIDUserText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <Label minHeight="0.0" minWidth="0.0" text="ID Rol:" textFill="WHITE">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="DIDRolText" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" prefHeight="38.0" prefWidth="201.0" promptText="...">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </TextField>
-                        <Button fx:id="btnDeleteUR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#deleteUR" prefHeight="38.0" prefWidth="201.0" style="-fx-background-color: white;" text="Delete">
-                           <VBox.margin>
-                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-                           </VBox.margin>
-                           <font>
-                              <Font size="15.0" />
                            </font>
                         </Button>
                      </children>

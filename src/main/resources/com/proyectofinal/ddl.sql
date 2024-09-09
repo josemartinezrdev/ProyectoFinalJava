@@ -5,7 +5,7 @@ USE finalJava;
 
 -- Register and login
 
-CREATE TABLE users ( --++ YA
+CREATE TABLE users ( --++ YA 1
     id INT AUTO_INCREMENT,
     enabled BOOLEAN,
     username VARCHAR(12) ,
@@ -14,13 +14,13 @@ CREATE TABLE users ( --++ YA
     CONSTRAINT Uq_user UNIQUE (username)
 );
 
-CREATE TABLE roles ( --++ YA
+CREATE TABLE roles ( --++ YA 2
     id INT AUTO_INCREMENT,
     name VARCHAR(255),
     CONSTRAINT pk_id_roles PRIMARY KEY (id)
 );
 
-CREATE TABLE users_roles ( --¨¨ NO OLVIDAR CORREGIR UPDATE
+CREATE TABLE users_roles ( --++ YA 3
     user_id INT,
     role_id INT,
     CONSTRAINT users_roles_ids UNIQUE (role_id, user_id),
@@ -30,19 +30,19 @@ CREATE TABLE users_roles ( --¨¨ NO OLVIDAR CORREGIR UPDATE
 
 -- DB
 
-CREATE TABLE empresas ( --++ YA
+CREATE TABLE empresas ( --++ YA 4
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_empresas PRIMARY KEY (id)
 );
 
-CREATE TABLE paises ( --++ YA
+CREATE TABLE paises ( --++ YA 5
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_paises PRIMARY KEY (id)
 );
 
-CREATE TABLE ciudades ( --++ YA
+CREATE TABLE ciudades ( --++ YA 6
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     idpais INT,
@@ -50,7 +50,7 @@ CREATE TABLE ciudades ( --++ YA
     CONSTRAINT fk_ciudades_paises FOREIGN KEY (idpais) REFERENCES paises(id)
 );
 
-CREATE TABLE direcciones ( --++ YA
+CREATE TABLE direcciones ( --++ YA 7
     id INT AUTO_INCREMENT,
     calle VARCHAR(50),
     carrera VARCHAR(50),
@@ -59,7 +59,7 @@ CREATE TABLE direcciones ( --++ YA
     CONSTRAINT fk_direcciones_ciudades FOREIGN KEY (idciudad) REFERENCES ciudades(id)
 );
 
-CREATE TABLE sucursales ( --++ YA
+CREATE TABLE sucursales ( --++ YA 8
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     iddireccion INT,
@@ -69,7 +69,7 @@ CREATE TABLE sucursales ( --++ YA
     CONSTRAINT fk_sucursales_empresas FOREIGN KEY (idempresa) REFERENCES empresas(id)
 );
 
-CREATE TABLE proveedores ( --++ YA
+CREATE TABLE proveedores ( --++ YA 9
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     iddireccion INT,
@@ -77,13 +77,13 @@ CREATE TABLE proveedores ( --++ YA
     CONSTRAINT fk_proveedores_direcciones FOREIGN KEY (iddireccion) REFERENCES direcciones(id)
 );
 
-CREATE TABLE categorias ( --++ YA
-    id INT AUTO_INCREMENT,
+CREATE TABLE categorias ( --++ YA 10
+    id INT AUTO_INCREMENT, 
     nombre VARCHAR(50),
     CONSTRAINT pk_categorias PRIMARY KEY (id)
 );
 
-CREATE TABLE productos ( --++ YA
+CREATE TABLE productos ( --++ YA 11
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     precio DECIMAL(10,2),
@@ -92,13 +92,13 @@ CREATE TABLE productos ( --++ YA
     CONSTRAINT fk_productos_categorias FOREIGN KEY (idcategoria) REFERENCES categorias(id)
 );
 
-CREATE TABLE estados ( --++ YA
+CREATE TABLE estados ( --++ YA 12
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_estados PRIMARY KEY (id)
 );
 
-CREATE TABLE pedidos ( --++ YA
+CREATE TABLE pedidos ( --++ YA 13
     id INT AUTO_INCREMENT,
     total DECIMAL(10,2),
     idestado INT,
@@ -106,7 +106,7 @@ CREATE TABLE pedidos ( --++ YA
     CONSTRAINT fk_pedidos_estados FOREIGN KEY (idestado) REFERENCES estados(id)
 );
 
-CREATE TABLE detalles_pedidos ( --++ YA
+CREATE TABLE detalles_pedidos ( --++ YA 14
     id INT AUTO_INCREMENT,
     idproducto INT,
     idpedido INT,
@@ -117,7 +117,7 @@ CREATE TABLE detalles_pedidos ( --++ YA
     CONSTRAINT fk_detalles_pedidos_proveedores FOREIGN KEY (idproveedor) REFERENCES proveedores(id)
 );
 
-CREATE TABLE bodegas (
+CREATE TABLE bodegas ( --++ YA 15
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     iddireccion INT,
@@ -125,7 +125,7 @@ CREATE TABLE bodegas (
     CONSTRAINT fk_bodegas_direcciones FOREIGN KEY (iddireccion) REFERENCES direcciones(id)
 );
 
-CREATE TABLE productos_bodegas (
+CREATE TABLE productos_bodegas ( --++ YA 16
     idproducto INT,
     idbodega INT,
     CONSTRAINT pk_productos_bodegas PRIMARY KEY (idproducto, idbodega),
@@ -133,7 +133,7 @@ CREATE TABLE productos_bodegas (
     CONSTRAINT fk_productos_bodegas_bodegas FOREIGN KEY (idbodega) REFERENCES bodegas(id)
 );
 
-CREATE TABLE empleados (
+CREATE TABLE empleados ( --++ YA 17
     id VARCHAR(50),
     nombre VARCHAR(50),
     idsucursal INT,
@@ -141,7 +141,7 @@ CREATE TABLE empleados (
     CONSTRAINT fk_empleados_sucursales FOREIGN KEY (idsucursal) REFERENCES sucursales(id)
 );
 
-CREATE TABLE telefonos_empleados (
+CREATE TABLE telefonos_empleados ( --++ YA 18
     id INT AUTO_INCREMENT,
     telefono VARCHAR(20),
     idempleado VARCHAR(50),
@@ -149,7 +149,7 @@ CREATE TABLE telefonos_empleados (
     CONSTRAINT fk_telefonos_empleados_empleados FOREIGN KEY (idempleado) REFERENCES empleados(id)
 );
 
-CREATE TABLE proveedores_productos (
+CREATE TABLE proveedores_productos ( --++ YA 19
     idproducto INT,
     idproveedor INT,
     CONSTRAINT pk_proveedores_productos PRIMARY KEY (idproducto, idproveedor),
@@ -157,7 +157,7 @@ CREATE TABLE proveedores_productos (
     CONSTRAINT fk_proveedores_productos_proveedores FOREIGN KEY (idproveedor) REFERENCES proveedores(id)
 );
 
-CREATE TABLE compras (
+CREATE TABLE compras ( --++ YA 20
     id INT AUTO_INCREMENT,
     fecha DATE,
     total DECIMAL(10,2),
@@ -166,7 +166,7 @@ CREATE TABLE compras (
     CONSTRAINT fk_compras_empleados FOREIGN KEY (idempleado) REFERENCES empleados(id)
 );
 
-CREATE TABLE detalle_compras (
+CREATE TABLE detalle_compras ( --++ YA 21
     idcompra INT,
     idpedido INT,
     CONSTRAINT pk_detalle_compras PRIMARY KEY (idcompra, idpedido),
@@ -174,13 +174,13 @@ CREATE TABLE detalle_compras (
     CONSTRAINT fk_detalle_compras_pedidos FOREIGN KEY (idpedido) REFERENCES pedidos(id)
 );
 
-CREATE TABLE tipos_clientes (
+CREATE TABLE tipos_clientes ( 
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_tipos_clientes PRIMARY KEY (id)
 );
 
-CREATE TABLE clientes (
+CREATE TABLE clientes ( 
     id VARCHAR(50),
     nombre VARCHAR(50),
     apellido VARCHAR(50),
@@ -191,7 +191,7 @@ CREATE TABLE clientes (
     CONSTRAINT fk_clientes_direcciones FOREIGN KEY (iddireccion) REFERENCES direcciones(id)
 );
 
-CREATE TABLE telefonos_clientes (
+CREATE TABLE telefonos_clientes ( 
     id INT AUTO_INCREMENT,
     telefono VARCHAR(20),
     idcliente VARCHAR(50),

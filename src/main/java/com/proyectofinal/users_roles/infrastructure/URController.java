@@ -164,7 +164,7 @@ public class URController {
         userRole.setRole_id(Integer.parseInt(CRolText.getText()));
         CreateUser_rolUseCase createUser_rolUseCase = new CreateUser_rolUseCase(user_rolService);
         createUser_rolUseCase.execute(userRole);
-        ajustarBoxes(400, createURVbox, 0);
+        ajustarBoxes(600, createURVbox, 0);
         CUserText.setText("");
         CRolText.setText("");
     }
@@ -178,7 +178,7 @@ public class URController {
         userRole.setRole_id(Integer.parseInt(UNEWRolIdTxt.getText()));
         UpdateUser_rolUseCase updateUser_rolUseCase = new UpdateUser_rolUseCase(user_rolService);
         updateUser_rolUseCase.execute(userRole);
-        ajustarBoxes(400, updateURVbox, 0);
+        ajustarBoxes(600, updateURVbox, 0);
         UUserIdTxt.setText("");
         URolIdTxt.setText("");
         UNEWUserIdTxt.setText("");
@@ -189,7 +189,7 @@ public class URController {
     public void deleteUR() {
         DeleteUser_rolUseCase deleteUserRoleUseCase = new DeleteUser_rolUseCase(user_rolService);
         deleteUserRoleUseCase.execute(Integer.parseInt(DIDUserText.getText()), Integer.parseInt(DIDRolText.getText()));
-        ajustarBoxes(400, deleteURVbox, 0);
+        ajustarBoxes(600, deleteURVbox, 0);
         DIDUserText.setText("");
         DIDRolText.setText("");
     }
