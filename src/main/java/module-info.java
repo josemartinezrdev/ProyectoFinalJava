@@ -4,6 +4,7 @@ module com.proyectofinal {
     requires java.desktop;
     requires transitive javafx.base;
     requires transitive java.sql;
+    requires transitive javafx.graphics;
 
     exports com.proyectofinal.user.infrastructure;
     exports com.proyectofinal.roles.infrastructure;
@@ -26,6 +27,11 @@ module com.proyectofinal {
     exports com.proyectofinal.proveedores_productos.infrastructure;
     exports com.proyectofinal.compras.infrastructure;
     exports com.proyectofinal.detalle_compras.infrastructure;
+    exports com.proyectofinal.tipos_clientes.infrastructure;
+    exports com.proyectofinal.clientes.infrastructure;
+    exports com.proyectofinal.telefonos_clientes.infrastructure;
+    exports com.proyectofinal.ventas.infrastructure;
+    exports com.proyectofinal.detalles_ventas.infrastructure;
     // ! AÑADIR DOMAIN
     exports com.proyectofinal.user.domain;
     exports com.proyectofinal.roles.domain;
@@ -48,6 +54,11 @@ module com.proyectofinal {
     exports com.proyectofinal.proveedores_productos.domain.entity; // | Entidades con entity
     exports com.proyectofinal.compras.domain.entity; // | Entidades con entity
     exports com.proyectofinal.detalle_compras.domain.entity; // | Entidades con entity
+    exports com.proyectofinal.tipos_clientes.domain.entity; // | Entidades con entity
+    exports com.proyectofinal.clientes.domain.entity; // | Entidades con entity
+    exports com.proyectofinal.telefonos_clientes.domain.entity; // | Entidades con entity
+    exports com.proyectofinal.ventas.domain.entity; // | Entidades con entity
+    exports com.proyectofinal.detalles_ventas.domain.entity; // | Entidades con entity
 
     // ! AÑADIR CADA ENTIDAD
     opens com.proyectofinal to javafx.fxml;
@@ -72,6 +83,11 @@ module com.proyectofinal {
     opens com.proyectofinal.proveedores_productos.infrastructure to javafx.fxml;
     opens com.proyectofinal.compras.infrastructure to javafx.fxml;
     opens com.proyectofinal.detalle_compras.infrastructure to javafx.fxml;
+    opens com.proyectofinal.tipos_clientes.infrastructure to javafx.fxml;
+    opens com.proyectofinal.clientes.infrastructure to javafx.fxml;
+    opens com.proyectofinal.telefonos_clientes.infrastructure to javafx.fxml;
+    opens com.proyectofinal.ventas.infrastructure to javafx.fxml;
+    opens com.proyectofinal.detalles_ventas.infrastructure to javafx.fxml;
 
     exports com.proyectofinal;
 }

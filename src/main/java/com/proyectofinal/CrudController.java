@@ -88,23 +88,23 @@ public class CrudController {
     }
 
     public void tiposClientesFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("tipos_clientes");
     }
 
     public void clientesFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("clientes");
     }
 
     public void telefonosClientesFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("telefonos_clientes");
     }
 
     public void ventasFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("ventas");
     }
 
     public void detallesVentasFun() throws IOException {
-        App.setRoot("users");
+        App.setRoot("detalles_ventas");
     }
 
     public void back() throws IOException {

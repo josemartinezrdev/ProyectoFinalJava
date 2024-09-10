@@ -174,13 +174,13 @@ CREATE TABLE detalle_compras ( --++ YA 21
     CONSTRAINT fk_detalle_compras_pedidos FOREIGN KEY (idpedido) REFERENCES pedidos(id)
 );
 
-CREATE TABLE tipos_clientes ( 
+CREATE TABLE tipos_clientes ( --++ YA 22
     id INT AUTO_INCREMENT,
     nombre VARCHAR(50),
     CONSTRAINT pk_tipos_clientes PRIMARY KEY (id)
 );
 
-CREATE TABLE clientes ( 
+CREATE TABLE clientes ( --++ YA 23
     id VARCHAR(50),
     nombre VARCHAR(50),
     apellido VARCHAR(50),
@@ -211,11 +211,12 @@ CREATE TABLE ventas (
 );
 
 CREATE TABLE detalles_ventas (
+    id INT AUTO_INCREMENT,
     idventa INT,
     total INT,
     idproducto INT,
     cantidad INT,
-    CONSTRAINT pk_detalles_ventas PRIMARY KEY (idventa, idproducto),
+    CONSTRAINT pk_detalles_ventas PRIMARY KEY (id),
     CONSTRAINT fk_detalles_ventas_ventas FOREIGN KEY (idventa) REFERENCES ventas(id),
     CONSTRAINT fk_detalles_ventas_productos FOREIGN KEY (idproducto) REFERENCES productos(id)
 );
